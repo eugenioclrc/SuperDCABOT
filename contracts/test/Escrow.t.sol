@@ -400,14 +400,11 @@ contract EscrowTest is Test {
     // --- 4) sell() ---
 
     function test_Sell_CalculatesRebuyCorrectly() public {
-        // First we need to drain some asset0 so there's room to "rebuy"?
-        // Wait, 'sell' is USER selling asset0 back to escrow.
-        // Escrow pays asset1.
-        // Condition: "No sell filled yet" -> implies we must have sold some asset0 via buy() first?
-        // Ah, `_totalSoldAsset0()` checks `sellOrders[i].filled`.
-        // So yes, someone must have BOUGHT from the escrow first.
-        
-        escrow.initialize(params, address(token0), address(token1), address(feed0), address(feed1), owner);
+        // Create params with 1% takeProfitBPS to match the test logic
+        Escrow.Params memory testParams = params;
+        testParams.takeProfitBPS = 100;
+
+        escrow.initialize(testParams, address(token0), address(token1), address(feed0), address(feed1), owner);
 
         // Alice buys 1 ETH (Order 0 filled)
         vm.prank(alice);
