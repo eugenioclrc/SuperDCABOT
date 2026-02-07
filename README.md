@@ -1,6 +1,16 @@
 # SuperDCABOT
 
-A monorepo containing smart contracts, frontend, and backend services.
+**P2P Grid Trading AMM for Ethereum**
+
+> Built for ETHGlobal Hack the Money 2026
+
+NOTE: This is a monorepo containing smart contracts, frontend, and backend services.
+
+---
+
+## 🎯 What is SuperDCABOT?
+
+SuperDCABOT is a **peer-to-peer grid trading protocol** where users deploy personal escrow contracts that generate exponential sell ladders. Other traders buy directly from these ladders, and escrow owners can "rebuy" to reset the ladder at new prices—creating a continuous "buy low, sell high" cycle without any intermediaries.
 
 ## Structure
 
