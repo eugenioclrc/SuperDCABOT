@@ -1,0 +1,19 @@
+{
+  "name": "dca-hackthemoney2",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "keep"
+  ],
+  "scripts": {
+    "dev:frontend": "cd frontend && bun run dev",
+    "dev:keep": "cd keep && bun run index.ts",
+    "build:frontend": "cd frontend && bun run build",
+    "build:contracts": "cd contracts && forge build",
+    "test:contracts": "cd contracts && forge test"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
